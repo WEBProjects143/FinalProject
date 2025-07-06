@@ -1,6 +1,8 @@
 import { createContext,useState,useEffect, useContext} from "react";
 
+//creating context using createContext
 export const ThemeContext=createContext()
+
 export const ThemeProvider=({children})=>{
 const [theme,setTheme]=useState(()=>{
     return localStorage.getItem("theme")||"light"
@@ -8,19 +10,18 @@ const [theme,setTheme]=useState(()=>{
 
  const toogleFunc=(e)=>{
     const data=e.target.checked
-    const mode=data===true?"light":"dark"
-    console.log(mode)
+    console.log(data)
+    const mode=data===true?"dark":"light"
     setTheme(mode)
-    console.log(theme)
    localStorage.setItem("theme",mode)
 
 }
 useEffect(()=>{
-    document.body.setAttribute("dark-theme",theme)
+    document.body.setAttribute("data-theme",theme)
 },[theme])
 
 return(
-    <ThemeContext.Provider value={{toogleFunc}}>
+    <ThemeContext.Provider value={{theme,toogleFunc}}>
         {children}
     </ThemeContext.Provider>
 )

@@ -1,11 +1,11 @@
 
 import {useTheme } from "../../../../Utils/DarkMode";
 const Nav = ()=>{
-    const {toogleFunc}=useTheme();
+    const {theme, toogleFunc}=useTheme();
 
     return (
         <>
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <nav className={`navbar navbar-expand-lg ${theme === "dark" ? "navbar-dark bg-dark" : "navbar-light bg-light"}`}      >
             <div className="container-fluid">
                 <a className="navbar-brand" href="/dashboard">Navbar</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +35,7 @@ const Nav = ()=>{
                     </li>
                 </ul>
                 <div class="form-check form-switch me-5">
-                    <input className="form-check-input" name ="dark-mode" type="checkbox" id="flexSwitchCheckDefault" value="false" onChange={toogleFunc}/>
+                    <input className="form-check-input" name ="dark-mode" type="checkbox" id="flexSwitchCheckDefault" checked={theme === "dark"} onChange={toogleFunc}/>
                     <label className="form-check-label" for="flexSwitchCheckDefault">Dark Mode</label>
                 </div>
                 <form className="d-flex" role="search">

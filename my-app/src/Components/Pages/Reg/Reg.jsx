@@ -33,7 +33,7 @@ const RegisterPage=()=>{
         <>
             <h2 className="text-center mb-4">Registration Page</h2>
 
-            <form className="row g-3 p-4 border rounded shadow-sm bg-light" onSubmit={handleSubmit}>
+            <form className="row g-3 p-4 border rounded shadow-sm" onSubmit={handleSubmit}>
             <div className="col-md-6">
                 <label htmlFor="inputEmail4" className="form-label">Email</label>
                 <input

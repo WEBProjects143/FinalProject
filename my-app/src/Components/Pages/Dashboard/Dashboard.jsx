@@ -33,7 +33,7 @@ const Dash=()=>{
         <>
             <Nav/>
                {/* Hero Section */}
-                <div className="bg-light text-center py-5">
+                <div className=" text-center py-5">
                     <div className="container">
                     <h1 className="display-4">Welcome to MyApp</h1>
                     <p className="lead">The best solution for your needs, powered by React & Firebase.</p>
@@ -72,7 +72,7 @@ const Dash=()=>{
                     </div>
                 </div>
                 {/* Cards Section */}
-                <div className="bg-light text-center py-5">
+                <div className=" text-center py-5">
                     <div className="container">
                     <Cards products={products}/>
                     </div>
