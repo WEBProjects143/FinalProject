@@ -7,7 +7,7 @@ const Routing =()=>{
         <Routes>
             <Route path="/register" element={<RegisterPage/>}/>
             <Route path="/login" element={ <LoginPage/>}/>
-            <Route path="/dashboard" element={<Dash/>}/>
+            <Route path="/" element={<Dash/>}/>
         </Routes>
     )
 }

@@ -1,7 +1,34 @@
 import { Outlet } from "react-router";
 import Nav from "./Navbar/Navbar";
 import Cards from "./Cards/Cards";
+
 const Dash=()=>{
+    const products = [
+  {
+    id: 1,
+    name: "Wireless Headphones",
+    price: 59.99,
+    category: "Electronics",
+    image: "https://www.bbassets.com/media/uploads/p/l/40329884_10-sony-wh-ch720-bluetooth-headphone-with-mic-dual-noise-sensor-technology-over-ear-black.jpg",
+    inStock: true
+  },
+  {
+    id: 2,
+    name: "Bluetooth Speaker",
+    price: 29.99,
+    category: "Electronics",
+    image: "https://m.media-amazon.com/images/I/41yQZFhJ-dL._SY300_SX300_QL70_FMwebp_.jpg",
+    inStock: false
+  },
+  {
+    id: 3,
+    name: "Cotton T-Shirt",
+    price: 14.99,
+    category: "Clothing",
+    image: "https://unstd.shop/cdn/shop/files/SAGE-GREEN-2.jpg?v=1734507963&width=600",
+    inStock: true
+  }
+];
     return(
         <>
             <Nav/>
@@ -47,7 +74,7 @@ const Dash=()=>{
                 {/* Cards Section */}
                 <div className="bg-light text-center py-5">
                     <div className="container">
-                    <Cards/>
+                    <Cards products={products}/>
                     </div>
                 </div>
             <Outlet/>

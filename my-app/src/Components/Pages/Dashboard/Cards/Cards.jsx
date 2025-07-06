@@ -1,13 +1,20 @@
-const Cards=()=>{
+const Cards=({products})=>{
     return(
         <>
-             <div className="card" style={{width: "18rem;"}}>
-                <img src="..." class="card-img-top" alt="..."/>
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                        <a href="/dashboard" class="btn btn-primary">Go somewhere</a>
-                    </div>
+            <div className="container" >
+                <div className="row">
+                    {products.map(item =>(
+                        <div className="col-sm-3 card m-5" style={{width: "10rem;"}}>
+                                    <img src={item.image} class="card-img-top" alt="..."/>
+                                        <div class="card-body">
+                                            <h5 class="card-title">{item.name}</h5>
+                                            <p class="card-text">{item.category}</p>
+                                            <p class="card-text">{item.price}</p>
+                                            <a href="/dashboard" class="btn btn-primary">Add To Cart</a>
+                                        </div>
+                        </div>
+                    ))}
+                </div>
             </div>
         </>
     )

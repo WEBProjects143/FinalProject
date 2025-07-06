@@ -31,49 +31,107 @@ const RegisterPage=()=>{
 
     return(
         <>
-        <h2 className="">Registration page</h2>
-    <form class="row g-3" onSubmit={handleSubmit}>
-        <div class="col-md-6">
-            <label for="inputEmail4" class="form-label">Email</label>
-            <input type="email" name="email" class="form-control" id="inputEmail4" value ={formData.email} onChange={handleChange}/>
-        </div>
-        <div class="col-md-6">
-            <label for="inputPassword4" class="form-label">Password</label>
-            <input type="password" name="Password" class="form-control" id="inputPassword4" value ={formData.Password} onChange={handleChange}/>
-        </div>
-        <div class="col-12">
-            <label for="inputAddress" class="form-label">Address</label>
-            <input type="text" name="Address" class="form-control" id="inputAddress" placeholder="1234 Main St" onChange={handleChange} value ={formData.Address}/>
-        </div>
-        <div class="col-md-6">
-            <label for="inputCity" class="form-label">City</label>
-            <input type="text"  name="City" class="form-control" id="inputCity"  value ={formData.City} onChange={handleChange}/>
-        </div>
-        <div class="col-md-4">
-            <label for="inputState" class="form-label">State</label>
-            <select id="inputState" name="State"  class="form-select" value ={formData.State} onChange={handleChange}>
-            <option selected>Choose...</option>
-            <option >Delhi</option>
-            <option >Mumbai</option>
-            <option >Chhattisgardh</option>
-            </select>
-        </div>
-        <div class="col-md-2">
-            <label for="inputZip" class="form-label">Zip</label>
-            <input type="text" name="Zip" class="form-control" id="inputZip" value ={formData.Zip} onChange={handleChange}/>
-        </div>
-        <div class="col-12">
-            <div class="form-check">
-            <input class="form-check-input" name="checkbox" type="checkbox" id="gridCheck" value ={formData.checkbox} onChange={handleChange}/>
-            <label class="form-check-label" for="gridCheck">
-                Check me out
-            </label>
+            <h2 className="text-center mb-4">Registration Page</h2>
+
+            <form className="row g-3 p-4 border rounded shadow-sm bg-light" onSubmit={handleSubmit}>
+            <div className="col-md-6">
+                <label htmlFor="inputEmail4" className="form-label">Email</label>
+                <input
+                type="email"
+                name="email"
+                className="form-control"
+                id="inputEmail4"
+                value={formData.email}
+                onChange={handleChange}
+                />
             </div>
-        </div>
-        <div class="col-12">
-            <button type="submit" class="btn btn-primary">Sign in</button>
-        </div>
-    </form>
+
+            <div className="col-md-6">
+                <label htmlFor="inputPassword4" className="form-label">Password</label>
+                <input
+                type="password"
+                name="Password"
+                className="form-control"
+                id="inputPassword4"
+                value={formData.Password}
+                onChange={handleChange}
+                />
+            </div>
+
+            <div className="col-12">
+                <label htmlFor="inputAddress" className="form-label">Address</label>
+                <input
+                type="text"
+                name="Address"
+                className="form-control"
+                id="inputAddress"
+                placeholder="1234 Main St"
+                onChange={handleChange}
+                value={formData.Address}
+                />
+            </div>
+
+            <div className="col-md-6">
+                <label htmlFor="inputCity" className="form-label">City</label>
+                <input
+                type="text"
+                name="City"
+                className="form-control"
+                id="inputCity"
+                value={formData.City}
+                onChange={handleChange}
+                />
+            </div>
+
+            <div className="col-md-4">
+                <label htmlFor="inputState" className="form-label">State</label>
+                <select
+                id="inputState"
+                name="State"
+                className="form-select"
+                value={formData.State}
+                onChange={handleChange}
+                >
+                <option value="">Choose...</option>
+                <option>Delhi</option>
+                <option>Mumbai</option>
+                <option>Chhattisgardh</option>
+                </select>
+            </div>
+
+            <div className="col-md-2">
+                <label htmlFor="inputZip" className="form-label">Zip</label>
+                <input
+                type="text"
+                name="Zip"
+                className="form-control"
+                id="inputZip"
+                value={formData.Zip}
+                onChange={handleChange}
+                />
+            </div>
+
+            <div className="col-12">
+                <div className="form-check">
+                <input
+                    className="form-check-input"
+                    name="checkbox"
+                    type="checkbox"
+                    id="gridCheck"
+                    value={formData.checkbox}
+                    onChange={handleChange}
+                />
+                <label className="form-check-label" htmlFor="gridCheck">
+                    Check me out
+                </label>
+                </div>
+            </div>
+
+            <div className="col-12 text-center">
+                <button type="submit" className="btn btn-primary px-4">Sign in</button>
+            </div>
+            </form>
+
         </>
     )
 }

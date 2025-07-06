@@ -1,5 +1,8 @@
-import React from "react"
+
+import {useTheme } from "../../../../Utils/DarkMode";
 const Nav = ()=>{
+    const {toogleFunc}=useTheme();
+
     return (
         <>
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -31,6 +34,10 @@ const Nav = ()=>{
                     <a className="nav-link disabled" aria-disabled="true" href="/dashboard">Disabled</a>
                     </li>
                 </ul>
+                <div class="form-check form-switch me-5">
+                    <input className="form-check-input" name ="dark-mode" type="checkbox" id="flexSwitchCheckDefault" value="false" onChange={toogleFunc}/>
+                    <label className="form-check-label" for="flexSwitchCheckDefault">Dark Mode</label>
+                </div>
                 <form className="d-flex" role="search">
                     <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
                     <button className="btn btn-outline-success" type="submit">Search</button>
