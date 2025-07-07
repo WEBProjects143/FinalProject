@@ -1,5 +1,6 @@
 import { createContext,useState,useEffect, useContext} from "react";
 
+
 //creating context using createContext
 export const ThemeContext=createContext()
 
@@ -10,7 +11,6 @@ const [theme,setTheme]=useState(()=>{
 
  const toogleFunc=(e)=>{
     const data=e.target.checked
-    console.log(data)
     const mode=data===true?"dark":"light"
     setTheme(mode)
    localStorage.setItem("theme",mode)

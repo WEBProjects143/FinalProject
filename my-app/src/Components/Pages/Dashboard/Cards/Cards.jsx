@@ -1,17 +1,19 @@
+import {useCart} from "../../../../Utils/CartContext"
 const Cards=({products})=>{
+    const {AddToCart}=useCart()
     return(
         <>
             <div className="container" >
                 <div className="row">
                     {products.map(item =>(
-                        <div className="col-sm-3 card m-5" style={{width: "10rem;"}}>
-                                    <img src={item.image} class="card-img-top" alt="..."/>
-                                        <div class="card-body">
-                                            <h5 class="card-title">{item.name}</h5>
-                                            <p class="card-text">{item.category}</p>
-                                            <p class="card-text">{item.price}</p>
-                                            <a href="/dashboard" class="btn btn-primary">Add To Cart</a>
-                                        </div>
+                        <div className="col-sm-3 card m-5" style={{width: "18rem;"}} key={item.id}>
+                                <img src={item.image} class="card-img-top" alt="..."/>
+                                    <div className="card-body">
+                                        <h5 className="card-title">{item.name}</h5>
+                                        <p className="card-text">{item.category}</p>
+                                        <p className="card-text">{item.price}</p>
+                                        <button type="button" class="btn btn-primary" onClick={()=>AddToCart(item)}>Add To Cart</button>
+                                    </div>
                         </div>
                     ))}
                 </div>

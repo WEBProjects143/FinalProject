@@ -75,9 +75,9 @@ const Dash=()=>{
                 <div className=" text-center py-5">
                     <div className="container">
                     <Cards products={products}/>
+                     <Outlet />
                     </div>
                 </div>
-            <Outlet/>
         </>
     )
 }
