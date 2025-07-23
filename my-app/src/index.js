@@ -5,19 +5,24 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from './Utils/DarkMode';
 import CartItems from './Utils/CartContext';
-import {BrowserRouter} from "react-router"
+import {BrowserRouter} from "react-router";
+import { Provider } from 'react-redux';
+import reduxWishlist from './store/Redux';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
-      <ThemeProvider>
-        <CartItems>
-          <React.StrictMode>
-            <App/>
-          </React.StrictMode>
-        </CartItems>  
-      </ThemeProvider>
-    </BrowserRouter>
+  <Provider store={reduxWishlist}>
+    <BrowserRouter>
+        <ThemeProvider>
+          <CartItems>
+            <React.StrictMode>
+              <App/>
+            </React.StrictMode>
+          </CartItems>  
+        </ThemeProvider>
+      </BrowserRouter>
+    </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,12 +1,14 @@
 
 import {useTheme } from "../../../../Utils/DarkMode";
+import { useSelector } from "react-redux";
 const Nav = ()=>{
+    const wishCount=useSelector(store=>store.wishlist)
     const {theme, toogleFunc}=useTheme();
 
     return (
         <>
         <nav className={`navbar navbar-expand-lg ${theme === "dark" ? "navbar-dark bg-dark" : "navbar-light bg-light"}`}      >
-            <div className="container-fluid">
+            <div className="container-fluid mt-2">
                 <a className="navbar-brand" href="/dashboard">Navbar</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
@@ -31,7 +33,15 @@ const Nav = ()=>{
                     </ul>
                     </li>
                     <li className="nav-item">
-                    <a className="nav-link disabled" aria-disabled="true" href="/dashboard">Disabled</a>
+                    <a className="nav-link position-relative" aria-disabled="true" href="/dashboard">Wishlist
+                        
+                        {(wishCount.length>0) &&
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            {wishCount.length}
+                            <span class="visually-hidden">unread messages</span>
+                        </span>
+                        }
+                    </a>
                     </li>
                 </ul>
                 <div class="form-check form-switch me-5">
