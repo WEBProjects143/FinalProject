@@ -19,6 +19,11 @@ const CartItems =({children})=>{
         const data=cart.filter(items=>items.id !== id )   
         setCart(data)
     }
+    const Sort=(value)=>{
+        console.log("cart" +cart)
+        console.log("value" + value)
+
+    }
 
 
     useEffect(()=>{
@@ -28,7 +33,7 @@ const CartItems =({children})=>{
 
     return(
         <>
-        <CartItem.Provider value={{cart,AddToCart,removeCart}}>
+        <CartItem.Provider value={{cart,AddToCart,removeCart,Sort}}>
             {children}
         </CartItem.Provider>
         </>
