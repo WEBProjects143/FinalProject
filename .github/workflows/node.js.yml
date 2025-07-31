@@ -17,10 +17,12 @@ jobs:
       - name: 📦 Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
 
       - name: 📦 Install dependencies
         run: npm ci
+        working-directory: ./my-app
 
       - name: 🧪 Run tests
         run: npm test -- --watchAll=false
+        working-directory: ./my-app
