@@ -1,5 +1,5 @@
- import {Routes, Route} from "react-router";
- import RegisterPage from "../Components/Pages/Reg/Reg";
+import {Routes, Route} from "react-router";
+import RegisterPage from "../Components/Pages/Reg/Reg";
 import LoginPage from "../Components/Pages/login";
 import Dash from "../Components/Pages/Dashboard/Dashboard";
 import CartPage from "../Components/Pages/Dashboard/CartItems/CartItems";

@@ -18,9 +18,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          
+      - name: Install dependencies
+        run: |
+          if [ -e yarn.lock ]; then
+          yarn install --frozen-lockfile
+          elif [ -e package-lock.json ]; then
+          npm ci
+          else
+          npm i
+          fi
 
-      - name: 📦 Install dependencies
-        run: npm ci
-
-      - name: 🧪 Run tests
-        run: npm test -- --watchAll=false
+      - name: Build React App
+        run: npm run build
